@@ -1,6 +1,6 @@
 import pytest
 import pytest_asyncio
-from chat_memory import ChatMemory
+from chat.chat_memory import ChatMemory
 
 
 @pytest_asyncio.fixture
