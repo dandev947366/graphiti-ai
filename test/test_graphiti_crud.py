@@ -1,3 +1,27 @@
+"""
+This test suite validates the asynchronous CRUD operations of the `GraphitiCRUD` class,
+which manages a knowledge graph composed of Entity and Episodic nodes using a Neo4j database.
+All tests use mocked Neo4j interactions to ensure isolation and determinism.
+
+Functionality:
+- Tests creation, retrieval, updating, and deletion of Entity and Episodic nodes.
+- Verifies relationship (edge) creation between nodes.
+- Mocks embedding generation and tests vector embedding insertion.
+- Validates error handling and transaction context management.
+
+Requirements:
+- pytest
+- pytest-asyncio
+- unittest.mock
+- numpy
+- Custom modules: graphiti, crud_graphiti
+
+Use Case:
+Typically used in graph-based knowledge applications such as episodic memory systems,
+semantic graph modeling, and intelligent agent memory persistence where graph nodes
+represent entities and events.
+"""
+
 import pytest
 from unittest.mock import AsyncMock, patch, MagicMock
 from datetime import datetime

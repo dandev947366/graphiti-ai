@@ -10,7 +10,7 @@ import os
 
 async def doSearch():
     llm_config = LLMConfig(
-        base_url="http://127.0.0.1:11434/api/generate", temperature=0.7
+        base_url="http://127.0.0.1:11434/api/generate", temperature=0.5
     )
     local_llm_client = LocalAiClient(config=llm_config, grammar_file="./json.gbnf")
     neo4j_db_name = "neo4j"

@@ -1,3 +1,25 @@
+"""
+This script connects to a local Neo4j database and populates it with sample data
+representing a green energy company's organizational structure, sites, systems,
+devices, vehicles, and energy consumption records.
+
+Functionality:
+- Connects to a Neo4j database using `neo4j` Python driver.
+- Executes a multi-statement Cypher script by splitting it into individual statements.
+- Sets up nodes and relationships for entities such as Company, User, Site, System,
+  Device, Vehicle, and EnergyConsumption.
+- Demonstrates complex graph data modeling and linkage.
+
+Requirements:
+- Neo4j running locally with Bolt enabled.
+- neo4j Python driver (`pip install neo4j`).
+
+Use Case:
+Ideal for initializing a knowledge graph or property graph structure in Neo4j for
+applications like smart grid management, IoT energy monitoring, or company data mapping.
+Can also serve as a test dataset for development or demos.
+"""
+
 from neo4j import GraphDatabase
 
 NEO4J_URI = "bolt://localhost:7687"

@@ -1,3 +1,29 @@
+"""
+This module contains asynchronous pytest tests for the ChatMemory class that manages
+chat messages stored in a Neo4j database.
+
+Functionality:
+- Sets up an async fixture to instantiate and connect a ChatMemory instance using Neo4j
+  connection parameters loaded from environment variables.
+- Tests saving messages to Neo4j and verifies that user nodes and message nodes are
+  created and retrievable.
+- Checks retrieval of recent messages for a user, ensuring correct order and content.
+- Verifies the prompt-building function correctly compiles chat history and appends new
+  messages.
+
+Requirements:
+- Neo4j instance running and accessible via credentials in environment variables:
+  NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD.
+- pytest and pytest-asyncio installed for async test support.
+- ChatMemory class implemented with async methods: connect, close, save_message,
+  get_recent_messages, and build_prompt.
+
+Use Case:
+Used to verify correct storage, retrieval, and formatting of chat conversation data in
+applications that use Neo4j to persist chat histories, enabling conversational AI or
+chatbot memory management.
+"""
+
 import os
 import pytest
 import pytest_asyncio

@@ -1,3 +1,26 @@
+"""
+This script connects to a Neo4j database and executes a series of Cypher queries to
+create a sample social network graph, including persons and their relationships,
+then runs queries to retrieve and display this data.
+
+Functionality:
+- Connects to Neo4j using the official Python driver with provided URI, username, and password.
+- Cleans the database by deleting all existing nodes and relationships.
+- Creates `Person` nodes with properties like name, age, gender, occupation, and city.
+- Creates relationships such as FRIENDS_WITH, WORKS_WITH, and LIVES_IN_SAME_CITY between persons.
+- Runs queries to list persons, friendships, work collaborations, and people living in the same city.
+- Prints query results to the console for verification.
+
+Requirements:
+- Neo4j database running and accessible at the specified bolt URI.
+- Neo4j Python driver (`neo4j` package).
+- Proper credentials with permission to read and write data in the Neo4j instance.
+
+Use Case:
+Useful for testing basic graph creation, relationship management, and querying in Neo4j,
+or as a template for building social or professional network graphs in applications.
+"""
+
 from neo4j import GraphDatabase, basic_auth
 
 # Set your Neo4j connection details

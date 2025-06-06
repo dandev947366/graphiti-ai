@@ -1,3 +1,36 @@
+"""
+Integration Tests for Neo4j-Powered Energy Dashboard Graph Schema
+
+This test suite verifies the integrity of key relationships and data structures within a Neo4j graph database
+that supports an Energy Management Dashboard. Each test ensures that the graph model is correctly populated
+with meaningful and connected entities.
+
+Tested Entities and Relationships:
+- `Company` nodes and their `HAS_USER` relationships to `User` nodes
+- `Site` nodes with associated `EnergyConsumption` via `HAS_ENERGY_CONSUMPTION` relationships
+- `System` nodes and their linked `Device` nodes via `HAS_DEVICE`
+- `User`-created `Vehicle` nodes via `CREATED_VEHICLE` relationships
+- `Site` nodes containing `System` nodes via `HAS_SYSTEM` relationships
+
+Features:
+- Uses Neo4j’s Python driver to query the graph
+- Employs pytest-style class-based setup/teardown
+- Verifies presence and integrity of connected nodes
+- Confirms data existence and structure for a specific date (e.g., for energy reports)
+
+Requirements:
+- A running Neo4j instance at `bolt://localhost:7687`
+- A populated graph with nodes: Company, User, Site, EnergyConsumption, System, Device, Vehicle
+- Python environment with `neo4j` driver installed
+
+Usage:
+Run the tests using a test runner like pytest:
+    pytest test_energy_dashboard.py
+
+This test suite helps validate the correctness of graph migrations, seed data, or ETL pipelines
+before using the graph data in production dashboards or analytical tools.
+"""
+
 from neo4j import GraphDatabase
 
 NEO4J_URI = "bolt://localhost:7687"

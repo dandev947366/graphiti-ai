@@ -1,3 +1,22 @@
+"""
+This script tests connectivity to a Neo4j database using credentials loaded from a .env file.
+
+Functionality:
+- Loads Neo4j connection details (URI, username, password) from environment variables.
+- Establishes a connection to the Neo4j database using the official Python driver.
+- Runs a simple test Cypher query (`RETURN 1 AS test`) to verify the connection.
+- Prints the result of the test query or an error message if the connection fails.
+
+Requirements:
+- .env file containing NEO4J_URI, NEO4J_USER, and NEO4J_PASSWORD variables.
+- neo4j Python driver (`neo4j` package).
+- python-dotenv to load environment variables from the .env file.
+
+Use Case:
+Useful as a simple connectivity check to ensure that your application can
+connect to a Neo4j instance before running more complex queries or transactions.
+"""
+
 from neo4j import GraphDatabase
 import os
 from dotenv import load_dotenv

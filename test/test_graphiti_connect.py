@@ -1,3 +1,24 @@
+"""
+This test suite verifies the initialization behavior and error handling of the
+`Graphiti` class from the `graphiti_core` module, which manages setup for a
+Neo4j-backed graph data model.
+
+Functionality:
+- Tests that the `build_indices_and_constraints` method is invoked correctly.
+- Confirms that resources (Neo4j driver sessions) are properly closed after use.
+- Ensures connection cleanup occurs even when exceptions are raised.
+
+Requirements:
+- pytest
+- pytest-asyncio
+- unittest.mock
+- graphiti_core module
+
+Use Case:
+Useful for ensuring reliable graph schema setup and robust startup behavior in
+applications that depend on Neo4j, such as knowledge graphs or event-based memory systems.
+"""
+
 import pytest
 from unittest.mock import AsyncMock, patch
 
