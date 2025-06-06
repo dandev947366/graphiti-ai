@@ -122,7 +122,7 @@ class ChatMemory:
 
 
 async def main():
-    chat = ChatMemoryWithGraphiti(neo4j_uri, neo4j_user, neo4j_password)
+    chat = ChatMemory(neo4j_uri, neo4j_user, neo4j_password)
     await chat.connect()
 
     user_id = "user123"

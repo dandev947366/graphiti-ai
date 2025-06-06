@@ -28,7 +28,10 @@ NEO4J_USER = os.getenv("NEO4J_USER", "neo4j")
 NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD", "password")
 
 
-def test_connection(uri, user, password):
+def test_connection():
+    uri = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+    user = os.getenv("NEO4J_USER", "neo4j")
+    password = os.getenv("NEO4J_PASSWORD", "password")
     driver = GraphDatabase.driver(uri, auth=(user, password))
     try:
         with driver.session() as session:
@@ -42,4 +45,4 @@ def test_connection(uri, user, password):
 
 
 if __name__ == "__main__":
-    test_connection(NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD)
+    test_connection()

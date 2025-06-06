@@ -1,0 +1,3 @@
+My name is Dan Le
+I study at HAMK
+I love building AI Agents

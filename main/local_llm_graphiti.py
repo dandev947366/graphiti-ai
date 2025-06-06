@@ -2,8 +2,8 @@ from graphiti_core import Graphiti
 from graphiti_core.nodes import EpisodeType
 from graphiti_core.llm_client.config import LLMConfig
 from datetime import datetime
-from llm_embedder import HuggingFaceEmbedder
-from local_ai_client import LocalAiClient
+from main.llm_embedder import HuggingFaceEmbedder
+from main.local_ai_client import LocalAiClient
 import asyncio
 import os
 
